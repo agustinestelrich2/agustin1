@@ -1,0 +1,22 @@
+void setup()//inicia la comunicacion serial
+{
+  pinMode(4, INPUT);//define el pin 4 en entrada
+  pinMode(10, OUTPUT);//define el pin 10 en salida 
+  pinMode(11, OUTPUT);//define el pin 11 en salida 
+}
+
+void loop()//aquí ponemos los comandos de la subrutina
+{
+  if (digitalRead(4) == HIGH)
+  /*son sentencias de comparacion
+   * lee el valor de un pin digital
+   * define a algo como encendido
+   */
+    digitalWrite(10, HIGH);//escribe un valor en HIGH en el pin digital 10
+    digitalWrite(11, LOW);//escribe un valor en LOW en el pin digital 11
+  } else { //si no se cumple la sentencia anterior, se realiza lo siguiente 
+    digitalWrite(10, LOW);//escribe un valor en LOW en el pin digital 10
+    digitalWrite(11, HIGH);//escribe un valor en HIGH en el pin digital 11
+  }
+  delay(10); // Delay a little bit to improve simulation performance
+}
